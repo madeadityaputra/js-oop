@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            //*disini kita membuat pesan error menggunakan kata kunci (throw).tetapi jika hanuya kode program ini saja , maka program akan terhenti disini saja. maka dari itu kita memerlukan kode probram di akhir try catch
+            throw new Error("total parameter harus lebih dari 0");
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      //* agar program tidak berhenti , kita menggunakan kode try cacth umtuk menangkap error
+      try {
+        console.log(MathUtil.sum());
+        console.log("kadek emilia");
+
+        //* sedangkan kode catch ini akan di jalankan programnya jika , kode program terjadi error
+      } catch (error) {
+        console.log(`Terjadi error : ${error.message}`);
+        //* kode fineally ini ,jika terjadi error atupuun tidak , programnya akan selalu di eksekusi
+      } finally {
+        console.log("kode program seleai");
+      }
+
+      //*dengan ditangkapnya error program masih bisa dilanjutkan.
+      console.log("made aditya");
+    </script>
+  </body>
+</html>

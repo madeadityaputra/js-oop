@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class public dan private</title>
+  </head>
+  <body>
+    <script>
+      //*public bisa
+      class Costumer {
+        firstName;
+        lastName;
+        balance = 0;
+
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.balance = 100;
+        }
+
+        sayHello() {}
+      }
+
+      //*value di atas bisa di rubah dimana saja
+      const made = new Costumer("made", "aditya");
+      console.log(made);
+
+      //*private menggunakan  (#)sebelum value
+      class Counter {
+        #counter = 0;
+
+        increment() {
+          this.#counter++;
+        }
+
+        decrement() {
+          this.#counter--;
+        }
+
+        get() {
+          return this.#counter;
+        }
+      }
+
+      //*value di atas hanya bisa di rubah di bagian dalam class tersebut saja.
+      const counter = new Counter();
+      console.log(counter);
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      counter.increment();
+
+      console.log(counter.get());
+
+      counter.decrement();
+      counter.decrement();
+      counter.decrement();
+
+      console.log(counter.get());
+      //*dia tidak bisa merubah value dari #coutner
+      counter.counter = 100;
+    </script>
+  </body>
+</html>

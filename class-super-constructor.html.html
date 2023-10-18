@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class Super Constructor</title>
+  </head>
+  <body>
+    <p>
+      * jika ingin menuliskan class constructor di inheritance nya , maka harus menggunakan kata kucni <strong>super</strong><br />
+      * kata kunci super digunakan untuk memanggil constructor super classbr <br />
+      * jka di child class kita kita membuat constuctor, maka wajib kita memanggil parent constructor, walaupun di parent tidak ada constructor <br />
+      * selain super constructor, di java script bisa menggunakan super method, seperti di bawah
+    </p>
+    <script>
+      class kariawan {
+        constructor(firstName) {
+          this.firstName = firstName;
+        }
+
+        sayHello(name) {
+          console.log(`hello ${name}, my name is kariawan ${this.firstName}`);
+        }
+
+        kariawanBaru() {
+          console.log("hai nama saya kariwan baru dika");
+        }
+      }
+
+      class manager extends kariawan {
+        //* super constructor
+        constructor(firstName, lastName) {
+          super(firstName);
+          this.lastName = lastName;
+        }
+
+        sayHello(name) {
+          console.log(`hello ${name}, my name is manager ${this.firstName} ${this.lastName}`);
+        }
+
+        //*super method
+        managerBaru() {
+          super.kariawanBaru();
+          console.log("hai nama saya manager baru dimas");
+        }
+      }
+
+      const made = new kariawan("made");
+      made.sayHello("joko");
+
+      const kadek = new manager("kadek", "emilia");
+      kadek.sayHello("joko");
+      kadek.managerBaru();
+
+      console.log(made);
+      console.log(kadek);
+    </script>
+  </body>
+</html>

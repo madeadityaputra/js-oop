@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class instanceof</title>
+  </head>
+  <body>
+    <p>
+      *instanceof berfungsi unutuk mengecek apakah sebuah object adalah dari class tertentu atau bukan <br />
+      * hasil dari instanceof ini adalah <strong>boolean</strong>. jika benar dia adlah sebuah instance dari sebuah object , maka hasilnya akan <strong>true</strong>, dan jika slaah maka hasilnya akan <strong>fasle</strong> <br />
+      *instanceof bukan hanya bisa digunakana untuk mengecek sebuah object adalah sebuah instance terteentu , tetepi juga mendukung <strong>inheritance atau turunan .</strong>
+    </p>
+
+    <script>
+      //* mengecek object dari insttance tertentu atau tidak
+      class Employee {}
+
+      class Manager {}
+
+      const made = new Employee();
+      const kadek = new Manager();
+
+      console.log(made instanceof Employee); // true
+      console.log(made instanceof Manager); // false
+      console.log(kadek instanceof Employee); //false
+      console.log(kadek instanceof Manager); // true
+
+      //* mengecek object dari turunan tertentu atau tidak
+      class Kariawan {}
+
+      class Boss extends Kariawan {}
+
+      const dika = new Kariawan();
+      const dimas = new Boss();
+
+      console.log(dika instanceof Kariawan); // true
+      console.log(dika instanceof Boss); // false
+      console.log(dimas instanceof Kariawan); //true
+      console.log(dimas instanceof Boss); // true
+    </script>
+  </body>
+</html>

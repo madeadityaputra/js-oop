@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>static clas field dan method</title>
+  </head>
+  <body>
+    <script>
+      //* static class field
+      class Configuration {
+        static name = "Belajar Java Script";
+        static version = 1.0;
+        static author = "Made Aditya Putra";
+      }
+
+      const config = new Configuration();
+      console.log(config); //*jika sudah di berikan kata kunci static, maka sudah bukan menjadi object instance dari config. tetapi itu sudah menjadi objec dari class Configuration itu sendiri
+
+      console.log(config.name); //* jika object dari config kita akses, maka hasilnya akan undiefined
+
+      //* agar bisa kita gunakan kita harus mengakses langsung dari class Congfiguration
+      console.log(Configuration.name);
+      console.log(Configuration.version);
+      console.log(Configuration.author);
+
+      //* static class method
+      //* agar bisa diguankan secara global di dalam constructor fungtion , kita menggunakan kata kunci static
+
+      class MathUtil {
+        static sum(...numbers) {
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      const result = MathUtil.sum(1, 1, 1, 1);
+      console.log(result);
+
+      //* mengguankan funtion
+      function sum(...numbers) {
+        let total = 0;
+        for (const number of numbers) {
+          total += number;
+        }
+        return total;
+      }
+
+      const hasil = sum(1, 1, 1, 1);
+      console.log(hasil);
+    </script>
+  </body>
+</html>

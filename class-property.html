@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class property</title>
+  </head>
+  <body>
+    <p>*jika ingin menambahkan parameter di dalam kata kunci class , maka gunakan kata constructor.</p>
+    <p>*kata kunci class ini sama saja seperti fungtion di js</p>
+
+    <script>
+      class Person {
+        constructor(name, umur, gender) {
+          console.log(`hello world my name is ${name}`);
+
+          this.umur = umur;
+          this.gender = gender;
+        }
+      }
+
+      const made = new Person("made", "22", "laki laki");
+      console.log(made);
+
+      const dika = new Person("dika", "23", "laki laki");
+      console.log(dika);
+    </script>
+  </body>
+</html>

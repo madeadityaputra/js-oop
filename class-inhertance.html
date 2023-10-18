@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inheritance class</title>
+  </head>
+  <body>
+    <p>
+      * kita sudah tau kalau prototype mendukung pewarisan atau inheritance walaupun agak tricky. <br />
+      * sebuah class bisa melakukan pewarisan dengan menggunakan kata kuci <strong>extends.</strong> <br />
+      * di java script, class inheritance sama sperti prototype inheritance , yang hanya bisa memilki <strong>satu parent class</strong>
+    </p>
+    <script>
+      class kariawan {
+        sayHello(name) {
+          console.log(`hello ${name}, my name is kariawan ${this.name}`);
+        }
+      }
+      class manager extends kariawan {
+        sayHello(name) {
+          console.log(`hello ${name}, my name is manager ${this.name}`);
+        }
+      }
+
+      const made = new kariawan("made");
+      made.name = "made";
+      made.sayHello("joko");
+
+      const kadek = new manager("kadek");
+      kadek.name = "kadek";
+      kadek.sayHello("joko");
+
+      console.log(made);
+      console.log(kadek);
+    </script>
+  </body>
+</html>
